@@ -8,7 +8,7 @@
   --secondaryColor: #000000;
   --bgPrimary: #6047EC;
   --bgSecondary: #F3F5F9;
-  --bgSearchField: #F5F5F5;
+  --bgMilestone: #F5F5F5;
   --bgBtn: #FF2A7E;
 }
 
@@ -104,8 +104,14 @@ Main Section
   margin: 10px auto;
 }
 
-.milestone{
+.milestones{
   background-color: var(--primaryColor);
+  border-radius: 7px;
+  padding: 10px;
+}
+
+.milestone{
+  background-color: var(--bgMilestone);
   border-radius: 7px;
   padding: 10px;
   margin-bottom: 10px;
