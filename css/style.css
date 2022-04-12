@@ -28,6 +28,11 @@
   margin: 0 auto;
 }
 
+
+/*====================
+Header Section
+======================*/
+
 .header{
   background-color: var(--bgPrimary);
 }
@@ -69,6 +74,11 @@
 }
 
 
+/*====================
+Main Section
+======================*/
+
+
 .main-area{
   background-color: var(--bgSecondary);
   padding: 3rem 0;
@@ -84,6 +94,7 @@
   width: 100%;
   height: auto;
   border-radius: 7px;
+  cursor: pointer;
   transition: opacity 0.8s linear;
   -webkit-transition: opacity 0.8s linear;
   -moz-transition: opacity 0.8s linear;
@@ -125,7 +136,7 @@
   background-color: var(--bgBtn);
   color: var(--primaryColor);
   font-size: 1.25rem;
-  padding: 5px;
+  padding: 5px 10px;
   border-radius: 5px;
   cursor: pointer;
 }
@@ -136,4 +147,67 @@
   transition: max-height 0.8s;
   -webkit-transition: max-height 0.8s;
   -moz-transition: max-height 0.8s;
+}
+
+
+/*====================
+Footer Section
+======================*/
+
+
+.footer-area{
+  background: linear-gradient(180deg, rgba(104,75,250,1) 0%, rgba(90,2,222,1) 100%);
+}
+
+.footer-content{
+  padding: 3rem 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-single{}
+
+.address{
+  margin: 1.25rem 0;
+}
+
+.address p{
+  color: var(--primaryColor);
+  margin-bottom: 10px;
+}
+
+.address p a{
+  color: var(--primaryColor);
+  text-decoration: none;
+  transition: all 0.5s linear;
+}
+
+.address p a:hover{
+  text-decoration: underline;
+}
+
+.footer-single ul{
+  list-style-type: none;
+}
+.footer-single ul li{
+  margin-bottom: 10px;
+}
+
+.footer-single ul li a{
+  text-decoration: none;
+  color: var(--primaryColor);
+  transition: all 0.5s linear;
+}
+
+.footer-single ul li a:hover{
+  text-decoration: underline;
+}
+
+.copyright-area{
+  text-align: center;
+  padding-bottom: 2rem;
+}
+
+.copyright-area p{
+  color: var(--primaryColor)
 }
