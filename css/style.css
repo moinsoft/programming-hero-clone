@@ -4,16 +4,13 @@
 
 :root {
   --fontFamily: 'Poppins', sans-serif;
+  --primaryColor: #ffffff;
+  --secondaryColor: #000000;
   --bgPrimary: #6047EC;
   --bgSecondary: #F3F5F9;
   --bgSearchField: #F5F5F5;
-  --bgLightDark: #212936;
-  --bgDark: #141722;
-  --textPrimaryColor: #ffffff;
+  --bgBtn: #FF2A7E;
 }
-
-
-
 
 
 *,*::before,*::after{
@@ -21,7 +18,7 @@
   padding: 0;
   box-sizing: border-box;
   outline: none;
-  color: var(--textPrimaryColor);
+  vertical-align: middle;
   font-family: var(--fontFamily);
 }
 
@@ -63,6 +60,7 @@
 
 .nav-link{
   text-decoration: none;
+  color: var(--primaryColor);
 }
 
 .avatar{
@@ -71,3 +69,71 @@
 }
 
 
+.main-area{
+  background-color: var(--bgSecondary);
+  padding: 3rem 0;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.25rem;
+}
+
+.milestone-img {
+  width: 100%;
+  height: auto;
+  border-radius: 7px;
+  transition: opacity 0.8s linear;
+  -webkit-transition: opacity 0.8s linear;
+  -moz-transition: opacity 0.8s linear;
+}
+
+.title,.details {
+  margin: 10px auto;
+}
+
+.milestone{
+  background-color: var(--primaryColor);
+  border-radius: 7px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.milestone-single{
+  display: flex;
+  align-items: center;
+}
+
+.checkbox{
+  margin-right: 7px;
+  cursor: pointer;
+}
+
+.milestone-title{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.milestone-name{
+  cursor: pointer;
+}
+
+.milestone-title span i{
+  background-color: var(--bgBtn);
+  color: var(--primaryColor);
+  font-size: 1.25rem;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.hidden-panel{
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.8s;
+  -webkit-transition: max-height 0.8s;
+  -moz-transition: max-height 0.8s;
+}
