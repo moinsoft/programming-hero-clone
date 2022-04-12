@@ -23,8 +23,8 @@
 }
 
 .container{
-  max-width: 80rem;
-  width: 80%;
+  max-width: 100rem;
+  width: 90%;
   margin: 0 auto;
 }
 
@@ -115,7 +115,32 @@ Main Section
   border-radius: 7px;
   padding: 10px;
   margin-bottom: 10px;
+  transition: 0.3s linear;
 }
+
+.active {
+  font-weight: bold;
+}
+
+.milestone:hover{
+  background-color: var(--bgPrimary);
+  color: var(--primaryColor);
+}
+
+.milestone:hover .milestone-title span i{
+  background-color: var(--primaryColor);
+  color: var(--secondaryColor);
+}
+
+.milestone:hover .module{
+  color: var(--secondaryColor);
+}
+
+.milestone:hover .module:hover{
+  background-color: var(--bgPrimary);
+  color: var(--primaryColor);
+}
+
 
 .milestone:last-child{
   margin-bottom: 0;
@@ -149,9 +174,12 @@ Main Section
   padding: 5px 10px;
   border-radius: 5px;
   cursor: pointer;
+  transition: 0.3s linear;
 }
 
 .hidden-panel{
+  background-color: var(--primaryColor);
+  border-radius: 7px;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.8s;
@@ -159,6 +187,28 @@ Main Section
   -moz-transition: max-height 0.8s;
 }
 
+.show {
+  max-height: 100%;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.module{
+  background-color: var(--bgSecondary);
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: 0.3s linear;
+}
+
+.module:last-child{
+  margin-bottom: 0;
+}
+
+.module p{
+  cursor: pointer;
+}
 
 /*====================
 Footer Section
@@ -174,8 +224,6 @@ Footer Section
   display: flex;
   justify-content: space-between;
 }
-
-.footer-single{}
 
 .address{
   margin: 1.25rem 0;
