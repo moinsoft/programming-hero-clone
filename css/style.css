@@ -7,9 +7,10 @@
   --primaryColor: #ffffff;
   --secondaryColor: #000000;
   --bgPrimary: #6047EC;
-  --bgSecondary: #F3F5F9;
-  --bgMilestone: #F5F5F5;
+  --bgSecondary: #dddeee;
   --bgBtn: #FF2A7E;
+  --scrollbar: #808080;
+  --transition: all .5s linear;
 }
 
 
@@ -20,6 +21,27 @@
   outline: none;
   vertical-align: middle;
   font-family: var(--fontFamily);
+}
+
+/*=========================================================
+Page Scrollbar Styles. Works on Chrome, Edge, and Safari
+===========================================================*/
+
+/* width */
+body::-webkit-scrollbar{
+  width: 12px;
+}
+
+
+/* Track */
+body::-webkit-scrollbar-track{
+  box-shadow: inset 0 0 5px var(--scrollbar);
+}
+
+
+/* Handle */
+body::-webkit-scrollbar-thumb{
+  background-color: var(--scrollbar);
 }
 
 .container{
@@ -77,20 +99,187 @@ Header Section
 /*====================
 Main Section
 ======================*/
-
-
 .main-area{
   background-color: var(--bgSecondary);
-  padding: 3rem 0;
+  padding: 2rem 0;
 }
 
-.main {
+.main{
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 1.25rem;
+  grid-template-columns: 2fr 3fr 1fr;
+  column-gap: 1.25rem;
 }
 
-.milestone-img {
+
+/*===================================
+Milestones & Modules List Section
+=====================================*/
+.course-content h1{
+  margin-bottom: 1rem;
+}
+
+.milestones, .markedMilestoneList{
+  background-color: var(--primaryColor);
+  padding: 5px;
+  border-radius: 5px;
+  height: 29.125rem;
+  overflow: auto ;
+}
+
+/*===================================
+Works on Chrome, Edge, and Safari
+=====================================*/
+
+/* width */
+.milestones::-webkit-scrollbar, .markedMilestoneList::-webkit-scrollbar{
+  width: 8px;
+}
+
+
+/* Track */
+.milestones::-webkit-scrollbar-track, .markedMilestoneList::-webkit-scrollbar-track{
+  box-shadow: inset 0 0 5px var(--scrollbar);
+  border-radius: 5px;
+}
+
+
+/* Handle */
+.milestones::-webkit-scrollbar-thumb, .markedMilestoneList::-webkit-scrollbar-thumb{
+  background-color: var(--bgPrimary);
+  border-radius: 5px;
+  transition: var(--transition);
+}
+
+
+/* Handle on hover */
+.milestones::-webkit-scrollbar-thumb:hover, .markedMilestoneList::-webkit-scrollbar-thumb:hover{
+  background-color: var(--bgBtn);
+}
+
+
+.milestoneSingle{
+  background-color: var(--bgSecondary);
+  padding: 5px;
+  border-radius: 5px;
+  transition: var(--transition);
+}
+
+.milestoneSingle:hover,.milestoneSingle:hover .milestone{
+  background-color: var(--bgPrimary);
+  color: var(--primaryColor);
+}
+
+
+.milestoneSingle:hover .milestoneTitle span i{
+  background-color: var(--primaryColor);
+  color: var(--secondaryColor);
+}
+
+.milestoneSingle:hover .moduleSingle{
+  color: var(--secondaryColor);
+}
+
+
+
+
+
+
+
+
+.milestoneSingle{
+  margin-bottom: 5px;
+}
+
+.milestoneSingle:last-child{
+  margin-bottom: 0;
+}
+
+.milestone{
+  background-color: var(--bgSecondary);
+  padding: 5px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center; 
+  transition: var(--transition);
+}
+
+
+
+.checkbox{
+  margin-right: 7px;
+  cursor: pointer;
+}
+
+.milestoneTitle{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.milestoneName{
+  font-size: 14px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.milestoneTitle span i{
+  background-color: var(--bgBtn);
+  color: var(--primaryColor);
+  font-size: 1rem;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+
+
+
+.innerHiddenMilestoneModule{
+  background-color: var(--primaryColor);
+  border-radius: 5px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.8s;
+  -webkit-transition: max-height 0.8s;
+  -moz-transition: max-height 0.8s;
+}
+
+.moduleSingle{
+  background-color: var(--bgSecondary);
+  border: 1px dashed var(--secondaryColor);
+  padding: 5px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.innerHiddenMilestoneModule .moduleSingle:hover{
+  background-color: var(--bgPrimary);
+  border: 1px solid var(--secondaryColor);
+  color: var(--primaryColor);
+}
+
+
+
+.moduleSingle p{
+  font-size: 14px;
+  cursor: pointer;
+}
+
+
+
+/*========================
+Course Details Section
+=========================*/
+
+.milestoneDetails h1{
+  margin-bottom: 1rem;
+}
+
+.milestoneImg{
   width: 100%;
   height: auto;
   border-radius: 7px;
@@ -99,115 +288,34 @@ Main Section
   -webkit-transition: opacity 0.8s linear;
   -moz-transition: opacity 0.8s linear;
 }
-
-.title,.details {
-  margin: 10px auto;
+.title{
+  margin: 1rem auto;
 }
 
-.milestones{
+
+/*============================
+Marked Milestone List Section
+==============================*/
+
+.markedListArea h4{
+  margin-bottom: 1.6rem;
+}
+
+.markedMilestoneList{
   background-color: var(--primaryColor);
-  border-radius: 7px;
-  padding: 10px;
 }
 
-.milestone{
-  background-color: var(--bgMilestone);
-  border-radius: 7px;
-  padding: 10px;
-  margin-bottom: 10px;
-  transition: 0.3s linear;
+.markedMilestoneList .milestoneName{
+  font-size: 8px;
 }
 
-.active {
-  font-weight: bold;
+.markedMilestoneList .milestoneTitle span i{
+  font-size: 12px;
+  padding: 3px 5px;
 }
 
-.milestone:hover{
-  background-color: var(--bgPrimary);
-  color: var(--primaryColor);
-}
-
-.milestone:hover .milestone-title span i{
-  background-color: var(--primaryColor);
-  color: var(--secondaryColor);
-}
-
-.milestone:hover .module{
-  color: var(--secondaryColor);
-}
-
-.milestone:hover .module:hover{
-  background-color: var(--bgPrimary);
-  color: var(--primaryColor);
-}
-
-
-.milestone:last-child{
-  margin-bottom: 0;
-}
-
-.milestone-single{
-  display: flex;
-  align-items: center;
-}
-
-.checkbox{
-  margin-right: 7px;
-  cursor: pointer;
-}
-
-.milestone-title{
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.milestone-name{
-  cursor: pointer;
-}
-
-.milestone-title span i{
-  background-color: var(--bgBtn);
-  color: var(--primaryColor);
-  font-size: 1.25rem;
-  padding: 5px 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.3s linear;
-}
-
-.hidden-panel{
-  background-color: var(--primaryColor);
-  border-radius: 7px;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.8s;
-  -webkit-transition: max-height 0.8s;
-  -moz-transition: max-height 0.8s;
-}
-
-.show {
-  max-height: 100%;
-  padding: 10px;
-  margin-top: 10px;
-}
-
-.module{
-  background-color: var(--bgSecondary);
-  padding: 10px;
-  margin-bottom: 10px;
-  border-radius: 7px;
-  cursor: pointer;
-  transition: 0.3s linear;
-}
-
-.module:last-child{
-  margin-bottom: 0;
-}
-
-.module p{
-  cursor: pointer;
+.markedMilestoneList .moduleSingle p{
+  font-size: 8px;
 }
 
 /*====================
@@ -237,7 +345,7 @@ Footer Section
 .address p a{
   color: var(--primaryColor);
   text-decoration: none;
-  transition: all 0.5s linear;
+  transition: var(--transition);
 }
 
 .address p a:hover{
@@ -254,7 +362,7 @@ Footer Section
 .footer-single ul li a{
   text-decoration: none;
   color: var(--primaryColor);
-  transition: all 0.5s linear;
+  transition: var(--transition);
 }
 
 .footer-single ul li a:hover{
