@@ -15,7 +15,7 @@ function loadMilestones() {
 
           <input type="checkbox" class="checkbox" />
 
-          <div class="milestoneTitle">
+          <div class="milestoneTitle" onclick="openMilestone(this)">
 
             <p class="milestoneName"> ${milestoneSingle.name} </p>
 
@@ -48,6 +48,18 @@ function loadMilestones() {
 
   }).join('')}`;
 
+}
+
+
+function openMilestone(milestoneElement) {
+  const currentHiddenPanel = milestoneElement.parentNode.nextElementSibling;
+  const shownPanel = document.querySelector('.show');
+
+  if (!currentHiddenPanel.classList.contains('show') && shownPanel) {
+    shownPanel.classList.remove('show');
+  }
+  
+  currentHiddenPanel.classList.toggle('show');
 }
 
 loadMilestones()

@@ -246,6 +246,10 @@ Works on Chrome, Edge, and Safari
   -moz-transition: max-height 0.8s;
 }
 
+.show{
+  max-height: 50rem
+}
+
 .moduleSingle{
   background-color: var(--bgSecondary);
   border: 1px dashed var(--secondaryColor);
