@@ -27,11 +27,19 @@ function loadMilestones() {
 
         <div class="innerHiddenMilestoneModule">
 
-          <div class="moduleSingle">
+          ${milestoneSingle.modules.map(function (moduleSingle) {
 
-            <p>Module Name</p>
+            return `
+            
+              <div class="moduleSingle">
 
-          </div>
+                <p> ${moduleSingle.name} </p>
+
+              </div>
+            
+            `;
+            
+          }).join('')}
 
         </div>
 
