@@ -160,8 +160,13 @@ Works on Chrome, Edge, and Safari
 .milestoneSingle{
   background-color: var(--bgSecondary);
   padding: 5px;
+  margin-bottom: 5px;
   border-radius: 5px;
   transition: var(--transition);
+}
+
+.milestoneSingle:last-child{
+  margin-bottom: 0;
 }
 
 .milestoneSingle:hover,.milestoneSingle:hover .milestone{
@@ -179,20 +184,6 @@ Works on Chrome, Edge, and Safari
   color: var(--secondaryColor);
 }
 
-
-
-
-
-
-
-
-.milestoneSingle{
-  margin-bottom: 5px;
-}
-
-.milestoneSingle:last-child{
-  margin-bottom: 0;
-}
 
 .milestone{
   background-color: var(--bgSecondary);
@@ -215,6 +206,11 @@ Works on Chrome, Edge, and Safari
   justify-content: space-between;
   align-items: center;
   width: 100%;
+}
+
+
+.active{
+  font-weight: bold;
 }
 
 .milestoneName{
