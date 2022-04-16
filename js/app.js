@@ -9,11 +9,11 @@ function loadMilestones() {
 
   milestones.innerHTML = `${milestonesData.map(function (milestoneSingle) {
     return `
-      <div class="milestoneSingle">         
+      <div class="milestoneSingle" id="${milestoneSingle._id}">         
 
         <div class="milestone">
 
-          <input type="checkbox" class="checkbox" />
+          <input type="checkbox" class="checkbox" onclick="markedMilestone(this, ${milestoneSingle._id})" />
 
           <div class="milestoneTitle" onclick="openMilestone(this, ${milestoneSingle._id})">
 
@@ -98,5 +98,27 @@ milestoneImg.onload = function () {
   this.style.opacity = '1';
 
 }
+
+
+
+// Marked Milestone Shift On The Marked List
+
+function markedMilestone(checkbox, id) {
+  const markedMilestoneList = document.querySelector('.markedMilestoneList');
+  const milestoneList = document.querySelector('.milestones');
+  const markedItem = document.getElementById(id);
+
+  if (checkbox.checked) {
+    // Mark As Done
+    milestoneList.removeChild(markedItem);
+    markedMilestoneList.appendChild(markedItem);
+  } else {
+    // Back To Main List
+    milestoneList.appendChild(markedItem);
+    markedMilestoneList.removeChild(markedItem);
+  }
+}
+
+
 
 loadMilestones()
